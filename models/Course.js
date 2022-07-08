@@ -5,7 +5,14 @@ const CourseSchema = new Schema({
     title: String,
     description: String,
     views: String,
-    link: String
+    link: String,
+    time: String,
+    article: Number,
+    index: {
+        type: Number,
+        unique: true,
+        index: true
+    }
 });
 const Course = mongoose.model('Course', CourseSchema);
 

@@ -23,14 +23,14 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/course/:id', async (req, res) => {
+app.get('/course/:index', async (req, res) => {
     try {
-        const id = req.params.id;
+        const index = req.params.index;
         // const views = req.params.views;
         // const id = '62c7d56fc7d48436060ff413'
-        console.log(id)
+        console.log(index)
 
-        let course = await Course.find({ _id: id.toString() });
+        let course = await Course.find({ index: index.toString() });
         // let course = await Course.findOne({ views: views });
         res.json(course);
     } catch (error) {
